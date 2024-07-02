@@ -13,7 +13,12 @@ from chats.models import Chat,Feedback
 
 #loading trained_model
 import joblib as jb
-model = jb.load('trained_model')
+import os
+
+model_path = os.path.dirname(os.path.abspath( __file__ ))
+final_model_path = os.path.join(model_path, "trained_model")
+
+model = jb.load(final_model_path)
 
 
 
